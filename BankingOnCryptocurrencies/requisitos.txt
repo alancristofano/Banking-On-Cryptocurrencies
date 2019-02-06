@@ -1,0 +1,7 @@
+Django==1.11.7
+pandas
+django-crispy-forms
+requests
+matplotlib
+social-auth-app-django
+Pillow == 5.0.0

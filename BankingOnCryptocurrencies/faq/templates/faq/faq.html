@@ -1,0 +1,69 @@
+{% extends "consulta/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %} 
+
+  <!-- Custom styles for this template -->
+    <link href="{% static "faq/css/micss.css"%}" rel="stylesheet">
+
+
+<div class="wrapper">
+	<h1>Preguntas frecuentes</h1>
+	
+	<div class="list-item">
+		<input class="trigger-input" id="faq-titulo-1" type="checkbox">
+		<div class="trigger-wrapper">
+			<label for="faq-titulo-1">
+				<h2 class="faq-titulo"> ¿ Qué es BankingOnCryptocurrencies ?</h2>
+			</label>
+			<p class="faq-contenido">Es una aplicación web que permite de una forma sencilla obtener información de gran interés sobre diversas criptomonedas que actualmente están en circulación.</p>
+		</div>
+	</div>
+	
+	<div class="list-item">
+		<input class="trigger-input" id="faq-titulo-2" type="checkbox">
+		<div class="trigger-wrapper">
+			<label for="faq-titulo-2">
+				<h2 class="faq-titulo">¿ BoC es una app gratuita ?</h2>
+			</label>
+			<p class="faq-contenido">Sí, la aplicación es totalmente gratuita.</p>
+		</div>
+	</div>
+	
+	<div class="list-item">
+		<input class="trigger-input" id="faq-titulo-3" type="checkbox">
+		<div class="trigger-wrapper">
+			<label for="faq-titulo-3">
+				<h2 class="faq-titulo">¿ Hay que registrarse para utilizar BoC ?</h2>
+			</label>
+			<p class="faq-contenido">El único requisito indespensable para poder hacer uso de la aplicación es disponer de una cuenta de usuario.</p>
+		</div>
+	</div>
+
+	<div class="list-item">
+		<input class="trigger-input" id="faq-titulo-4" type="checkbox">
+		<div class="trigger-wrapper">
+			<label for="faq-titulo-4">
+				<h2 class="faq-titulo">¿ Cómo contactar ?</h2>
+			</label>
+			<p class="faq-contenido">En la barra de navegación hay disponible una sección de "CONTACTO", vaya a ese apartado y rellene el formulario, intentaremos contestarle lo antes posible.</p>
+		</div>
+	</div>
+
+        <div class="list-item">
+		<input class="trigger-input" id="faq-titulo-5" type="checkbox">
+		<div class="trigger-wrapper">
+			<label for="faq-titulo-5">
+				<h2 class="faq-titulo">¿ Quiénes somos ?</h2>
+			</label>
+			<p class="faq-contenido">Somos Alan Martín Cristófano y Daniel Fernández García, estudiantes de Ingeniería informática por la UDC.</p>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,54 @@
+header.masthead {
+  position: relative;
+  background: url("../imagenes/cryptocurrencies1.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+#micontainer {
+
+padding-top: 13%;
+
+}
+
+
+li a:hover {
+  
+  background-color: #00b3b3;
+  border-radius: 40px;
+  
+}
+.navbar {
+  font-size: 110%;
+  
+}
+
+.navbar-brand {
+  font-size: 125%;
+
+}
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 20%;
+    padding-bottom: 12rem;
+  }
+
+.features-icons {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.features-icons .features-icons-item {
+  max-width: 20rem;
+}
+
+.iconos {
+
+  max-width: 7rem;
+
+}
+

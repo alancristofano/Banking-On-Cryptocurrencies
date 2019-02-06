@@ -1,0 +1,93 @@
+{% extends "consulta/base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="table-responsive" id="micontainer">
+<table class="table table-striped" >
+    <thead>
+      <tr>
+        <th>Precio</th>
+        <th>Precio mínimo</th>
+        <th>Precio máximo</th>
+	<th>Volumen 24h</th>
+	<th>Variación 24h</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{% if price == '' %} {{ price }}
+	{% else %} {{ price }} {{ divisa }}
+	{% endif %}</td>
+
+	<td>{% if minprice == '' %} {{ minprice }}
+	{% else %} {{ minprice }} {{ divisa }}
+	{% endif %}</td>
+
+	<td>{% if maxprice == '' %} {{ maxprice }}
+	{% else %} {{ maxprice }} {{ divisa }}
+	{% endif %}</td>
+
+	<td>{% if vol == '' %} {{ vol }}
+	{% else %} {{ vol }} {{ coin_id }}
+	{% endif %}</td>
+
+	<td>{% if change == '' %} {{ change }}
+	{% else %} {{ change }} %
+	{% endif %}</td>
+
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="text-center">
+            {% with '/consulta/imagenes/grafica.png' as imagen %}
+
+                {% if grafica == "GraficaLineal" %}
+                    <img class="img-fluid" src="{% static imagen %}"/>
+                {% elif grafica == "histogramaVolumen" %}
+                    <img class="img-fluid" src="{% static imagen %}"/>
+                {% endif %}
+            {% endwith %}
+</div>
+
+<div class="table-responsive" >
+<br>
+<br>
+<table class="table table-striped" >
+    <thead>
+      <tr>
+        <th>Mercado</th>
+        <th>Volumen 24h</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	{% if mercados %} {% for m in mercados %}
+        <td> {{m.0}}</td>
+
+	<td>{{m.1}} {{ coin_id }}</td>
+
+	<td>{{m.2}} {{ divisa }}</td>
+	<tr>
+	</tr>
+
+	{% endfor %} {% else %}
+		<div class="container" id="micontainer">
+		<h1> No existe ninguna moneda con ese nombre </h1>
+	</div>
+	{% endif %}
+
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+<div class="text-center" >
+            {% with '/consulta/imagenes/grafica2.png' as imagen %}  
+            	<img class="img-fluid" src="{% static imagen %}"/>   
+            {% endwith %}
+</div>
+{% endblock %}

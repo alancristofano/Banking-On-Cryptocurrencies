@@ -1,0 +1,98 @@
+{% extends "consulta/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %} 
+
+<div align="center" id="micontainer">
+
+    
+<!-- Form Name -->
+<legend>Contacte con nosotros</legend>
+<br>
+
+
+<!-- Success message -->
+{% if success%}
+	<div class="alert alert-success">Mensaje enviado. <i class="glyphicon glyphicon-thumbs-up"></i> Nos pondremos en contacto con usted lo antes posible.</div>
+{%endif%}
+
+<form method="POST" action="">{% csrf_token %}
+
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-8 control-label">Nombre</label>  
+  <div class="col-md-8 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="nombre" placeholder="Escriba aquí su nombre" class="form-control"  type="text" required>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-8 control-label">Correo electrónico</label>  
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input type="email" name="email" placeholder="e.g. ejemplo@ejemplo.com" class="form-control"  type="text" required>
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+       
+<div class="form-group">
+  <label class="col-md-8 control-label">Número de teléfono #</label>  
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="phone" placeholder="(+34)xxx-xxx-xxx" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+      
+<div class="form-group">
+  <label class="col-md-8 control-label">Dirección</label>  
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="address"  class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text area -->
+  
+<div class="form-group">
+  <label class="col-md-8 control-label">Mensaje</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        	<textarea class="form-control" name="comment" placeholder="Descripción" required></textarea>
+  </div>
+  </div>
+</div>
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-8 control-label"></label>
+  <div class="col-md-8">
+    <button class="btn btn-block btn-lg btn-info" type="submit"  method= "POST" action="/contact"  >Enviar </button>
+  </div>
+</div>
+
+</form>
+
+</div>
+    </div><!-- /.container -->
+{% endblock %}

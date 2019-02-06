@@ -1,0 +1,21 @@
+{% extends "consulta/base.html" %}
+
+{% block content %} {% if coin_list %} {% for c in coin_list %}
+
+<div class="form-row" id="micontainer">
+  <div class="col-12 col-md-9 mb-2 mb-md-0">
+    <h1> {{ c.0 }} </h1>
+  </div>
+
+  <div class="col-12 col-md-3">
+    <a class="btn btn-lg btn-info" href="{% url 'coin_selected' c.1 %} ">Seleccionar</a>
+  </div>
+</div> 
+<hr>
+{% endfor %} {% else %}
+<div class="container" id="micontainer">
+<h1> No existe ninguna moneda con ese nombre </h1>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "consulta/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %} 
+
+ 
+<div class="container" id="micontainer">
+	
+	<img class="img-fluid" src="https://www.cryptocompare.com{{ imagen }}" width="20%">
+	<br>
+	<br>
+	<h1> {{ nombre }} </h1>
+	<br>
+        <h4 >Seleccione los datos que desea consultar : </h4>
+	<form method="POST" action="/query/{{ coin_id }}/result">
+		{% csrf_token %}
+        	{{  coin_form|crispy }}
+		<br>
+		<button type="submit" class="btn btn-lg btn-info ">Enviar</button>
+	</form>
+	
+</div>
+
+
+
+{% endblock %}

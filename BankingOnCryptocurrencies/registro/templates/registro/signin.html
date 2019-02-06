@@ -1,0 +1,46 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <!-- Bootstrap core CSS -->
+   <link href= "{% static "consulta/vendor/bootstrap/css/bootstrap.min.css"%}" rel="stylesheet">
+
+   <!-- Custom styles for this template -->
+   <link href="{% static "registro/css/micss.css"%}" rel="stylesheet">
+
+
+    
+    <div class="container text-center text-dark">
+		<div class="row h-100 justify-content-center align-items-center">
+        	<div class="col-xl-5 mx-auto">
+		 		<strong><h1 > Bienvenido a BoC </h1></strong>
+			    <br>
+			    <p> Inicie sesión con su cuenta de usuario</p>
+			    <br>
+
+		        <form id='formulario' method="POST" action="">
+		        	{% csrf_token %}  
+		        	<input type="text"  class="form-control" name="username" placeholder="Usuario" required>
+		         	<br>
+		        	<input type="password"  class="form-control" name="password" placeholder="Contraseña" required>
+		        	{%if Error%}
+		        		<br>
+		            	<p style="color:red;">Usuario o contraseña incorrecto </p>
+					{%else%}
+					<br>
+		        	{%endif%}
+		        	<br>
+			      	<button type="submit" class="btn btn-block btn-lg "><Strong>Iniciar Sesión </Strong></button>
+		        </form>
+
+			    <p> ¿ Necesita una cuenta ?<a id="registrese" href="/registro/register/"> <strong>Registrarse</strong> </a></p>
+			    <br>
+			    <p> O </p>
+			    <hr style="background-color: #949494"> <br>
+			    <div class="generator">
+	        		<a href="{% url 'social:begin' 'twitter' %}"><i class="fa fa-lg fa-twitter"></i> Continuar con Twitter</a>
+	    		</div> 
+          </div>
+        </div>
+      </div>

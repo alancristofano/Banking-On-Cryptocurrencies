@@ -1,0 +1,29 @@
+{% extends "consulta/base.html" %}
+
+{% block content %} 
+
+    <!-- Masthead -->
+    <header class="masthead text-dark text-center">
+      <div class="container" id="micontainer">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h1 class="mb-5">Bienvenido {{request.user.username}}, comencemos con la búsqueda!</h1>
+          </div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <form method="POST">
+              {% csrf_token %}
+	      {{ form.moneda }}
+	      <br>
+	      <button type="submit" class="btn btn-block btn-lg btn-info">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    </div>
+
+
+
+{% endblock %}
+

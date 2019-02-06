@@ -1,0 +1,61 @@
+{% extends "portada/base.html" %}
+{% load staticfiles %}
+{% block content %} 
+
+    <!-- Masthead -->
+    <header class="masthead text-dark text-center"></header>
+
+    <!-- Icons Grid -->
+    <section class="features-icons text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class=" iconos mx-auto mb-5 mb-lg-0 mb-lg-3">
+	    {% with '/portada/imagenes/search.png' as imagen %}
+               <img class="img-fluid" src="{% static imagen %}"/>
+	    {% endwith %}
+	    </div>
+	    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <h3> 
+		 <br>
+	         <strong>Buscador de criptomonedas</strong>
+	      </h3>
+              <p class="lead mb-0"> Nuestra aplicación le permite realizar búsquedas de múltiples criptomonedas </p>
+	    </div>
+          </div>
+          <div class="col-lg-4">
+            <div class=" iconos mx-auto mb-5 mb-lg-0 mb-lg-3">
+	      {% with '/portada/imagenes/data.png' as imagen %}
+                 <img class="img-fluid" src="{% static imagen %}"/>
+	      {% endwith %}
+	    </div>
+	    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <h3> 
+		 <br>
+	         <strong>Datos actuales y de históricos</strong>
+	      </h3>
+              <p class="lead mb-0">Usted es quién decide que datos obtener y desde qué momento </p>
+              
+            </div>
+          </div>
+          <div class="col-lg-4">
+	    <div class=" iconos mx-auto mb-5 mb-lg-0 mb-lg-3">
+	      {% with '/portada/imagenes/coins.png' as imagen %}
+                 <img class="img-fluid" src="{% static imagen %}"/>
+	      {% endwith %}
+	    </div>
+	    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <h3> 
+		 <br>
+	         <strong> Intercambio de divisa </strong>
+	      </h3>
+              <p class="lead mb-0"> Le ofrecemos la posibilidad de seleccionar la moneda en la que quiere obtener los datos de mercado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+{% endblock %}
